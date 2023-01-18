@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box } from "@mui/material";
+import Banner from "./Components/Banner/Banner";
+import Contact from "./Components/ContactUS/Contact";
+import Footer from "./Components/Footer/Footer";
+import Navbar from "./Components/Navbar/Navbar";
+import SideInfo from "./Components/SideInfo/SideInfo";
+import StudentsOfMonth from "./Components/StudentsOfMonth/StudentsOfMonth";
+
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Box style={{background:"#f5f5fc"}}>
+    <Navbar /> 
+         <Banner />
+         <SideInfo/> 
+         <StudentsOfMonth />
+         <Contact />
+         <Footer />
+    </Box>
+  )
 }
 
 export default App;
