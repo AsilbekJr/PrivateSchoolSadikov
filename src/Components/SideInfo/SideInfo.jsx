@@ -64,7 +64,7 @@ const matchesSM = useMediaQuery(themes.breakpoints.down('md'));
               {
                 content.map((item) => (
               <Grid item xs={6} sm={6} md={4} lg={3}>
-                <Card sx={{ maxWidth: 345, minHeight: matchesXS ? 230 : 290 }}>
+                <Card sx={{ maxWidth: 345, minHeight: matchesXS ? 250 : 290 }}>
                   <Box
                     sx={{
                       borderRadius: "5px",
