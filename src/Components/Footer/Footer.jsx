@@ -19,7 +19,7 @@ const Footer = () => {
     <Box sx={{ backgroundColor: "#011c39"}}>
       <Container>
      <Box sx={{marginTop:"1rem"}}>
-        <Grid container spacing={matches ? 12 : 2}>
+        <Grid container spacing={matches ? 3 : 12}>
           <Grid item xs={6} md={4}>
             <Box
               sx={{
@@ -141,7 +141,7 @@ const Footer = () => {
           </Grid>
         </Grid>
     </Box>
-          <Box  sx={{ display:"flex", alignItems:"center", justifyContent:"center", }}>
+          <Box  sx={{ display:"flex", alignItems:"center", justifyContent:"center", marginTop:  "2rem"}}>
             <p style={{color:"#D0C9C0", fontSize:".8rem"}}>All rights reserved. Created by Asilbek</p>
           </Box>
       </Container>

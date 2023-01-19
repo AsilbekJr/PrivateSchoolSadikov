@@ -4,7 +4,7 @@ import Contact from "./Components/ContactUS/Contact";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar";
 import SideInfo from "./Components/SideInfo/SideInfo";
-import StudentsOfMonth from "./Components/StudentsOfMonth/StudentsOfMonth";
+// import StudentsOfMonth from "./Components/StudentsOfMonth/StudentsOfMonth";
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     <Navbar /> 
          <Banner />
          <SideInfo/> 
-         <StudentsOfMonth />
+         {/* <StudentsOfMonth /> */}
          <Contact />
          <Footer />
     </Box>

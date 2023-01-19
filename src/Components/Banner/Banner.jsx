@@ -10,7 +10,7 @@ const content = [
     description:
       "Biz taklif qilayotgan ta'lim tajribalardan o'tgan va zamonaviy metodlarga asoslangan ta'lim. Biz bilan sifatli va kafolatlangan ta'lim oling!",
     button: "Batafsil",
-    image: "https://www.uschamberfoundation.org/sites/default/files/ATboyraisehand.jpg",
+    image: "./image/banner/banner1.jpg",
     user: "Luan Gjokaj",
     userProfile: "https://i.imgur.com/JSW6mEk.png"
   },
@@ -19,7 +19,7 @@ const content = [
     description:
       "Bizda turli fanlar bo'yicha alohda yo'nalishlar mavjud. Siz o'z yo'nalishingiz bo'yicha chuqur va sifatli ta'lim olasiz va o'z maqsadlaringiz tomon dadil qadam tashlaysiz.",
     button: "Batafsil",
-    image: "./image/schoolSadikov.jpg",
+    image: "./image/banner/banner2.jpg",
     user: "Erich Behrens",
     userProfile: "https://i.imgur.com/0Clfnu7.png"
   },
@@ -28,7 +28,7 @@ const content = [
     description:
       "Darslar zamonaviy sinf xonalarida olib boriladi. Har bir sinf xonasi zamonaviy jihozlar bilan ta'minlangan. Bu yerda sizning bilim olishingiz uchun qulay muhit mavjud.",
     button: "Batafsil",
-    image: "https://www.gannett-cdn.com/presto/2022/01/25/PPHX/55389fe2-9a5b-4950-b71e-a34e719cb8e2-Classroom_iStockPhoto_GettyImages.jpg?crop=5621,3162,x0,y0&width=3200&height=1801&format=pjpg&auto=webp",
+    image: "./image/banner/banner3.jpg",
     user: "Bruno Vizovskyy",
     userProfile: "https://i.imgur.com/4KeKvtH.png"
   }

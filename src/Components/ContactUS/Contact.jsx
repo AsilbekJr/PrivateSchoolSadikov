@@ -1,15 +1,18 @@
 import React from 'react'
 import Title from '../Title'
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography, useMediaQuery } from '@mui/material';
 import { Call, Instagram, Place, Telegram } from '@mui/icons-material';
+import { useTheme } from '@mui/material';
 
 const Contact = () => {
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down("md"))
   return (
     <Box sx={{marginTop:"5rem"}}>
         <Title titleText={"Biz bilan bog'lanish"}/>
         <Container sx={{paddingBottom:"4rem"}}>
             <Grid container spacing={2} sx={{margin:"2rem 0"}}> 
-                  <Grid item xs={12} md={6} sx={{width:"50%", maxHeight:"250px"}}>
+                  <Grid item xs={12} md={6} sx={{width:"50%", maxHeight:"250px", marginBottom:matches ? "3rem" : "0rem" }}>
                     <Box sx={{display:"flex",padding:"0 0 1.1rem 0",width:"60%",alignItems:"center", margin: " 0 0 1.5rem 0rem",gap:"3rem", borderBottom:"1px solid #ccc"}}>
                         <Call sx={{color:"#22577A"}}/>
                         <Typography variant="p" sx={{fontSize:".9rem"}}>+99899 739 71 57</Typography>

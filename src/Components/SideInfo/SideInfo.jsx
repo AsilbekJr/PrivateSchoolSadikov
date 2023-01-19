@@ -52,7 +52,8 @@ const SideInfo = () => {
   });
   const themes = useTheme();
 
-const matches = useMediaQuery(themes.breakpoints.down('sm'));
+const matchesXS = useMediaQuery(themes.breakpoints.down('sm'));
+const matchesSM = useMediaQuery(themes.breakpoints.down('md'));
   return (
     <>
       <ThemeProvider theme ={theme}>
@@ -63,12 +64,12 @@ const matches = useMediaQuery(themes.breakpoints.down('sm'));
               {
                 content.map((item) => (
               <Grid item xs={6} sm={6} md={4} lg={3}>
-                <Card sx={{ maxWidth: 345, minHeight:290 }}>
+                <Card sx={{ maxWidth: 345, minHeight: matchesXS ? 230 : 290 }}>
                   <Box
                     sx={{
                       borderRadius: "5px",
                       width: "45px",
-                      margin: "16px",
+                      margin: "16px  0 0 16px",
                       height: "45px",
                       display: "flex",
                       alignItems: "center",
@@ -84,12 +85,12 @@ const matches = useMediaQuery(themes.breakpoints.down('sm'));
                     />
                   </Box>
                   <CardContent>
-                    <Typography gutterBottom variant={matches ? "h6" : "h5"} component="div">
+                    <Typography gutterBottom variant={matchesXS ? "h7" : matchesSM ? "h6" : "h5"} component="div">
                       {item.title}
                     </Typography>
-                    <Typography variant="p" color="text.secondary" sx={{fontSize:matches ? ".8rem" : "1rem", lineHeight:"19px"}}>
+                    <p  style={{fontSize: matchesXS ? ".7rem" : matchesSM ? ".8rem" : "1rem", lineHeight: matchesXS ? "15px" : matchesSM ? "17px" : "22px"}}>
                      {item.describtion}
-                    </Typography>
+                    </p>
                   </CardContent>
                 </Card>
               </Grid>
