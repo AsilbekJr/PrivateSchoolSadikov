@@ -13,7 +13,7 @@ const Title = ({titleText,color}) => {
 
   return (
     <ThemeProvider theme={themes}>
-    <div style={{display:"flex", flexDirection:"column", alignItems:"center", paddingBottom:"3rem"}}>
+    <div style={{display:"flex", flexDirection:"column", alignItems:"center",  paddingBottom:"3rem" }}>
         <Typography></Typography>
         <Divider sx={{textAlign:"center", bgcolor:"#ec661f",width:"30px",borderBottomWidth:"5px", marginBottom:"1rem"}}/>
         <Typography variant={matches ? "h6" : "h4"} sx={{color: color ? color : "black"}}>{titleText}</Typography>
