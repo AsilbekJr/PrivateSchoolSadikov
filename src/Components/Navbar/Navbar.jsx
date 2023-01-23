@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -7,7 +7,16 @@ import CssBaseline from '@mui/material/CssBaseline';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
 import { IconButton, Tooltip, MenuItem, createTheme, ThemeProvider, useMediaQuery } from '@mui/material';
-
+import Drawer from "@mui/material/Drawer";
+import CloseIcon from "@mui/icons-material/Close";
+import Divider from "@mui/material/Divider";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import FolderIcon from "@mui/icons-material/Folder";
+import ImageIcon from "@mui/icons-material/Image";
+import DescriptionIcon from "@mui/icons-material/Description";
+import Button from "@mui/material/Button";
 import { Menu } from '@mui/icons-material';
 import { Box } from '@mui/system';
 import { useTheme } from '@mui/material/styles';
@@ -15,6 +24,8 @@ import { Link } from 'react-router-dom';
 
 function HideOnScroll(props) {
   const { children, window } = props;
+  
+
   // Note that you normally won't need to set the window ref as useScrollTrigger
   // will default to window.
   // This is only being set here because the demo is in an iframe.
@@ -53,7 +64,18 @@ export default function Navbar(props) {
     const matches = useMediaQuery(themes.breakpoints.down("md"));
     const matchesDSm= useMediaQuery(themes.breakpoints.down("sm"));
 
+    const [open, setState] = useState(false);
 
+    const toggleDrawer = (open) => (event) => {
+      if (
+        event.type === "keydown" &&
+        (event.key === "Tab" || event.key === "Shift")
+      ) {
+        return;
+      }
+      //changes the function state according to the value of open
+      setState(open);
+    };
 
   return (
     <React.Fragment>
@@ -69,17 +91,79 @@ export default function Navbar(props) {
             <Box sx={{display: matches ? "none" : "flex", justifyContent:"space-around", gap:matchesDLg ? "1.5rem" : matches ? "1rem" : "2rem"}}>
         <MenuItem component={Link} to="fanlar" style={{color:"#333",fontSize: matchesDLg ? ".85rem" : ".9rem", textTransform:"uppercase"}}>Fanlar </MenuItem>
         <MenuItem component={Link} to="togaraklar" style={{color:"#333", fontSize: matchesDLg ? ".85rem" : ".9rem", textTransform:"uppercase"}}>To'garaklar</MenuItem>
-        <MenuItem style={{color:"#333", fontSize: matchesDLg ? ".85rem" : ".9rem", textTransform:"uppercase"}}>Imtihon natijalari</MenuItem>
+        <MenuItem component={Link} to="natijalar" style={{color:"#333", fontSize: matchesDLg ? ".85rem" : ".9rem", textTransform:"uppercase"}}>Nazorat ishi natijalari</MenuItem>
         <MenuItem style={{color:"#333", fontSize: matchesDLg ? ".85rem" : ".9rem", textTransform:"uppercase"}}>Yutuqlar</MenuItem>
         <MenuItem style={{color:"#333", fontSize: matchesDLg ? ".85rem" : ".9rem", textTransform:"uppercase"}}>Biz haqimizda</MenuItem>
 
       </Box>
             <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Sahifalar ro'yxati" sx={{display: matches ? "flex" : "none"}}>
-            <IconButton>
+            <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={toggleDrawer(true)}
+            sx={{
+              mr: 2,
+              display: {
+                xs: "block",
+                sm: "none"
+              }
+            }}
+            >
               <Menu style={{color:"#002bd6"}} />
             </IconButton>
-            </Tooltip>
+            <Drawer
+            //from which side the drawer slides in
+            anchor="right"
+            //if open is true --> drawer is shown
+            open={open}
+            //function that is called when the drawer should close
+            onClose={toggleDrawer(false)}
+            //function that is called when the drawer should open
+            onOpen={toggleDrawer(true)}
+            PaperProps={{
+              sx:{width:"70%"}
+            }}
+          >
+            {/* The inside of the drawer */}
+            <Box
+              sx={{
+                p: 2,
+                height: 1,
+                backgroundColor: "#011c39",
+
+              }}
+            >
+              {/* when clicking the icon it calls the function toggleDrawer and closes the drawer by setting the variable open to false */}
+              <IconButton sx={{ mb: 2 }}>
+                <CloseIcon sx={{color:"white"}} onClick={toggleDrawer(false)} />
+              </IconButton>
+
+              <Divider sx={{ mb: 2 }} />
+
+              <Box sx={{ mb: 2 }}>
+                <ListItemButton component={Link} to="fanlar" onClick={toggleDrawer(false)}>
+                  <ListItemText primaryTypographyProps={{fontSize:"1rem",textTransform:"uppercase",color:"white"}} primary="Fanlar" />
+                </ListItemButton>
+                <Divider style={{backgroundColor:"white"}}/>
+                <ListItemButton component={Link} to="togaraklar" onClick={toggleDrawer(false)}>
+                  <ListItemText primaryTypographyProps={{fontSize:"1rem",textTransform:"uppercase",color:"white"}} primary="To'garaklar" />
+                </ListItemButton>
+                 <Divider style={{backgroundColor:"white"}}/>
+                <ListItemButton component={Link} to="natijalar" onClick={toggleDrawer(false)}>
+                  <ListItemText primaryTypographyProps={{fontSize:"1rem",textTransform:"uppercase",color:"white"}} primary="Imtihon natijalari" />
+                </ListItemButton>
+                 <Divider style={{backgroundColor:"white"}}/>
+                <ListItemButton component={Link} to="yutuqlar" onClick={toggleDrawer(false)}>
+                  <ListItemText primaryTypographyProps={{fontSize:"1rem",textTransform:"uppercase",color:"white"}} primary="Yutuqlar" />
+                </ListItemButton>
+                 <Divider style={{backgroundColor:"white"}}/>
+                <ListItemButton component={Link} to="biz" onClick={toggleDrawer(false)}>
+                  <ListItemText primaryTypographyProps={{fontSize:"1rem",textTransform:"uppercase",color:"white"}} primary="Biz haqimizda" />
+                </ListItemButton>
+              </Box>
+            </Box>
+          </Drawer>
          
           </Box>
           </Toolbar>
