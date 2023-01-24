@@ -1,22 +1,18 @@
 import React,{useState} from 'react';
-import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
-import { IconButton, Tooltip, MenuItem, createTheme, ThemeProvider, useMediaQuery } from '@mui/material';
+import { IconButton, MenuItem, createTheme, ThemeProvider, useMediaQuery } from '@mui/material';
 import Drawer from "@mui/material/Drawer";
 import CloseIcon from "@mui/icons-material/Close";
+import {Telegram, Instagram, Facebook} from "@mui/icons-material";
 import Divider from "@mui/material/Divider";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import FolderIcon from "@mui/icons-material/Folder";
-import ImageIcon from "@mui/icons-material/Image";
-import DescriptionIcon from "@mui/icons-material/Description";
-import Button from "@mui/material/Button";
+
 import { Menu } from '@mui/icons-material';
 import { Box } from '@mui/system';
 import { useTheme } from '@mui/material/styles';
@@ -40,14 +36,11 @@ function HideOnScroll(props) {
   );
 }
 
-HideOnScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
+// HideOnScroll.propTypes = {
+//   children: PropTypes.element.isRequired,
+//  
+//   window: PropTypes.func,
+// };
 
 export default function Navbar(props) {
    
@@ -92,8 +85,8 @@ export default function Navbar(props) {
         <MenuItem component={Link} to="fanlar" style={{color:"#333",fontSize: matchesDLg ? ".85rem" : ".9rem", textTransform:"uppercase"}}>Fanlar </MenuItem>
         <MenuItem component={Link} to="togaraklar" style={{color:"#333", fontSize: matchesDLg ? ".85rem" : ".9rem", textTransform:"uppercase"}}>To'garaklar</MenuItem>
         <MenuItem component={Link} to="natijalar" style={{color:"#333", fontSize: matchesDLg ? ".85rem" : ".9rem", textTransform:"uppercase"}}>Nazorat ishi natijalari</MenuItem>
-        <MenuItem style={{color:"#333", fontSize: matchesDLg ? ".85rem" : ".9rem", textTransform:"uppercase"}}>Yutuqlar</MenuItem>
-        <MenuItem style={{color:"#333", fontSize: matchesDLg ? ".85rem" : ".9rem", textTransform:"uppercase"}}>Biz haqimizda</MenuItem>
+        <MenuItem component={Link} to="yutuqlar" style={{color:"#333", fontSize: matchesDLg ? ".85rem" : ".9rem", textTransform:"uppercase"}}>Yutuqlar</MenuItem>
+        <MenuItem component={Link} to="biz" style={{color:"#333", fontSize: matchesDLg ? ".85rem" : ".9rem", textTransform:"uppercase"}}>Biz haqimizda</MenuItem>
 
       </Box>
             <Box sx={{ flexGrow: 0 }}>
@@ -161,6 +154,17 @@ export default function Navbar(props) {
                 <ListItemButton component={Link} to="biz" onClick={toggleDrawer(false)}>
                   <ListItemText primaryTypographyProps={{fontSize:"1rem",textTransform:"uppercase",color:"white"}} primary="Biz haqimizda" />
                 </ListItemButton>
+              </Box>
+              <Box sx={{height:"300px", width:"100%", display:"flex", alignItems:"center", justifyContent:"center", gap:"1rem"}}>
+                  <IconButton>
+                      <Telegram style={{color:"white"}}/>
+                  </IconButton>
+                  <IconButton>
+                      <Instagram style={{color:"white"}}/>
+                  </IconButton>
+                  <IconButton>
+                      <Facebook style={{color:"white"}}/>
+                  </IconButton>
               </Box>
             </Box>
           </Drawer>

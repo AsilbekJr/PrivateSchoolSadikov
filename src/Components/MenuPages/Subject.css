@@ -1,0 +1,4 @@
+.boxImage:hover .fanImage{
+    transform: scale(1.05);
+    transition: all .6s ease-in-out;
+}

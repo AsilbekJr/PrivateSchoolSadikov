@@ -42,9 +42,8 @@ const StudentsOfMonth = () => {
   const matches = useMediaQuery(theme.breakpoints.down("sm"))
   const matchesSM = useMediaQuery(theme.breakpoints.down("md"))
   return (
-    <Box sx={{ marginTop: "5rem" }}>
-      <Box sx={{ backgroundColor: "#6FB2D2", padding:"5rem" }}>
-      <Title titleText="Iqtidorli O'quvchilar" color="white"/>
+      <Box sx={{ backgroundColor: "rgb(248,248,248)", padding:"5rem 5rem 8rem 5rem" }}>
+      <Title titleText="Yutuqlarimiz" color="black"/>
         <Grid container spacing={2}>
           {content.map((item) => (
             <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -71,7 +70,6 @@ const StudentsOfMonth = () => {
           ))}
         </Grid>
       </Box>
-    </Box>
   );
 };
 

@@ -1,7 +1,8 @@
 import React from 'react'
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography, useTheme } from '@mui/material';
 import Title from '../Title';
-
+import { useMediaQuery } from '@mui/material';
+import "./Subject.css"
 const content = [
     {
         name:"Matematika",
@@ -38,6 +39,8 @@ const content = [
 ]
 
 const Subjects = () => {
+    const theme = useTheme();
+    const  matches = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box sx={{ margin:"5rem 0", backgroundColor:"#fff"}}>
         <Title  titleText="Fanlar"/>
@@ -47,8 +50,8 @@ const Subjects = () => {
                     content.map((item) => (      
                         <Grid item xs={6} md={4} lg={3} sx={{ height:"300px"}}>
                             <Box sx={{width:"100%", height:"100%",display:"flex",flexDirection:"column", alignItems:"center",}} >
-                                <Box sx={{width:"180px", height:"180px",borderRadius:"5px", padding:"30px", backgroundColor:"#f5f5f5"}}>
-                                    <img style={{width:"100%"}} src={item.image}/>
+                                <Box className='boxImage' sx={{ position:"relative", overflow:"hidden", width:matches ? "150px" : "180px", height:matches ? "150px" : "180px",borderRadius:"5px", padding:"30px", backgroundColor:"#f5f5f5", display:"flex",alignItems:"center", justifyContent:"center", cursor:"pointer"}}>
+                                    <img className="fanImage" style={{width:matches ? "80%" : "100%"}} src={item.image}/>
                                 </Box>
                                 <Typography variant='p' sx={{padding:"1rem 0"}}>
                                     {item.name}

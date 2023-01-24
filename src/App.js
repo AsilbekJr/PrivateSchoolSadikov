@@ -7,7 +7,7 @@ import Result from "./Components/MenuPages/Result";
 import Login from "./Components/MenuPages/Login";
 import PrivateRoute from "./Components/MenuPages/PrivateRoute";
 import NotFound from "./Components/NotFound";
-// import StudentsOfMonth from "./Components/StudentsOfMonth/StudentsOfMonth";
+import StudentsOfMonth from "./Components/StudentsOfMonth/StudentsOfMonth";
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           <Route element={<PrivateRoute />}> 
             <Route path="natijalar" element={<Result/>} />
           </Route>
+          <Route path="yutuqlar" element={<StudentsOfMonth />}/>
           <Route path="*" element={ <NotFound />} />
         </Route>
       </Routes>
