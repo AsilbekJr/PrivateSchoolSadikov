@@ -16,7 +16,7 @@ const Footer = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   return (
-    <Box sx={{ backgroundColor: "#011c39"}}>
+    <Box sx={{ backgroundColor: "#011c39", position:"releative", zIndex:"999"}}>
       <Container>
      <Box sx={{marginTop:"1rem"}}>
         <Grid container spacing={matches ? 3 : 12}>
@@ -135,7 +135,7 @@ const Footer = () => {
                 <ListItemText secondary={<Typography variant="a" style={{fontSize:".8rem", color:"#D0C9C0"}}>G'ijduvon tuman </Typography>}/>
               </ListItem>
               <ListItem >
-                <ListItemText secondary={<Typography variant="a" style={{fontSize:".8rem", color:"#D0C9C0"}}> Xonsolor qishlog'i, 6-maktab ro'parasi</Typography>}/>
+                <ListItemText secondary={<Typography variant="a" style={{fontSize:".8rem", color:"#D0C9C0"}}>  Taxtaxon mfy, Taxtaxon ko'chasi, 132-uy</Typography>}/>
               </ListItem>
             </List>
           </Grid>
