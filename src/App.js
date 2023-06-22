@@ -9,10 +9,12 @@ import PrivateRoute from "./Components/MenuPages/PrivateRoute";
 import NotFound from "./Components/NotFound";
 import StudentsOfMonth from "./Components/StudentsOfMonth/StudentsOfMonth";
 import AboutUs from './Components/MenuPages/AboutUs';
+import ScrollToTop from "./Components/scrool";
 
 function App() {
   return (
     <>
+        <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

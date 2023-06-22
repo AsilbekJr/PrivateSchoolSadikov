@@ -36,7 +36,8 @@ const content = [
 
 const Banner = () => (
   <div>
-    <Slider className="slider-wrapper" autoplay="4000" infinite="true" minSwipeOffset="150">
+    <Slider
+    className="slider-wrapper" autoplay="4000" infinite="true" minSwipeOffset="150">
       {content.map((item, index) => (
         <div
           key={index}
