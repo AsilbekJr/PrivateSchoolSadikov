@@ -76,7 +76,7 @@ export default function Navbar(props) {
       <CssBaseline />
       <HideOnScroll {...props}>
         <AppBar style={{backgroundColor:"rgb(248,248,248", color:"#404040", padding: "10px", height:matchesDSm ? "65px" : "90px",justifyContent:"center"}}> 
-          <Toolbar sx={{display:"flex", justifyContent:matchesDLg ? "space-between" : "space-around"}}>
+          <Toolbar sx={{display:"flex", justifyContent:matchesDLg ? "space-between" : "space-around", paddingRight:matchesDLg ? 0 : "10px"}}>
           <Box component={Link} to="/" sx={{display:"flex", alignItems:"center", cursor:"pointer", justifyContent:"center",textDecoration:"none"}}>      
                 <img alt="Logo" src="/image/logo.png"  style={{width: matches ? "33px" : "40px",p:2,m:1, objectFit:"contain" }} /> 
                 <Typography  sx={{fontSize:matches ? "1rem" : "1.4rem",color:"#002bd6",letterSpacing:"1px", padding:"0 0 0 12px", fontWeight:"400"}}>SADIKOV SCHOOL</Typography>    
